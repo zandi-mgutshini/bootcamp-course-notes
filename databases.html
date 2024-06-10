@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Databases</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- Primary Navigation Bar Goes Here-->
+      </nav>
+      <h1>Databases</h1>
+      <ul>
+        <!-- Secondary Navigation List of lesson links goes here-->
+         <li>
+            <a href="#introduction-to_databases" target="_top">Introduction to Databases</a>
+         </li>
+      </ul>
+    </header>
+
+    <!-- Lesson 1: Introduction to Databases -->
+    <section id="introduction-to-databases">
+      <h2>Introduction to Databases</h2>
+      <section id="data-information">
+        <h3>Data and Information</h3>
+        <p>
+          Data is a collection of inputs that have not been cleaned, organised
+          or analysed. Unlike data, information has been processed and
+          formatted. Information is data that has been processed in this way
+          allowing the user to understand its meaning and glean useful knowledge
+          about trends and other patterns and relationships from the cleaned and
+          formatted data.
+        </p>
+      </section>
+      <section id="definitions">
+        <h3>Definitions</h3>
+        <dl>
+          <dt>Data:</dt>
+          <dd>
+            Data is a collection of individual inputs that require processing in
+            order to be considered informative.
+          </dd>
+          <dt>Field:</dt>
+          <dd>
+            A field is a named variable within a set of data whose value is made
+            up of a character or many characters.
+          </dd>
+          <dt>Record:</dt>
+          <dd>
+            A record is one or more fields that are logically related to each
+            other as they describe a single entity.
+          </dd>
+          <dt>File:</dt>
+          <dd>A set of records that relate to each other.</dd>
+        </dl>
+
+        <table border="1">
+          <caption>
+            Example of Customer Records in a File
+          </caption>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>John Doe</td>
+              <td>johndoe@example.com</td>
+              <td>0123456789</td>
+              <td>1234 Elm Street</td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Jane Smith</td>
+              <td>janesmith@example.com</td>
+              <td>9876543210</td>
+              <td>5678 Oak Avenue</td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>Sam Brown</td>
+              <td>sambrown@example.com</td>
+              <td>1122334455</td>
+              <td>910 Pine Road</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          This table illustrates an example of records within a database file.
+          Each row represents a unique record, comprising multiple fields that
+          describe a single entity, in this case, a customer. The headers
+          (Customer ID, Name, Email, Phone Number, Address) define each field,
+          showing the kind of data contained in each. This structured format of
+          data collection helps in organising and managing information
+          effectively. The table itself symbolises a file, an aggregation of
+          related records.
+        </p>
+      </section>
+      <section id="using-dbms">
+        <h3>
+          Using Database Management System (DBMS) to Solve Data Management
+          Issues
+        </h3>
+        <article id="efficient-data-retrieval">
+          <h4>Efficient Data Retrieval</h4>
+          <p>
+            Before the introduction of DBMS, retrieving a record was
+            time-consuming as one would often have to manually find the file and
+            relevant record in physical storage or in local storage. If the data
+            was to be used in a program one would need to write code
+            specifically for data retrieval. The speed of data retrieval is more
+            efficient with DBMS. For example, search engines use DBMS to
+            retrieve data that matches a user search query from billions of
+            records stored remotely and retrieved in real time.
+          </p>
+        </article>
+        <article id="data-consolidation">
+          <h4>Data Consolidation and Consistency</h4>
+          <p>
+            Because data was not stored in centralised databases,
+            inconsistencies, redundancies, and duplicates were common in data
+            before DBMS. Without centralised repositories different users may
+            add the same record into locally stored versions of the file. A
+            single organisation could have multiple versions of a file being
+            used by multiple departments making operational errors more common.
+            DBMS resolved this issue by allowing multiple users to access the
+            same data with consolidation occurring in real time.
+          </p>
+        </article>
+        <article id="backups-recovery">
+          <h4>Data Backups and Recovery</h4>
+          <p>
+            Before DBMS, data would have been backed up manually from local
+            storage to external storage. Backups were time-consuming and the
+            more files that exist, the longer the backup process would take and
+            more storage capacity would be required whether this be in hard
+            drives or in physical folders in a storage facility. Data backups
+            would need to be consolidated manually removing redundant data that
+            has not changed since the last backup.
+          </p>
+        </article>
+        <article id="data-security">
+          <h4>Data Security and Integrity</h4>
+          <p>
+            Without DBMS managing the integrity of data is difficult. The
+            addition of incomplete or unreliable data could go unnoticed
+            affecting the quality of observations within the dataset. When using
+            DBMS, rules can be used to trigger alerts providing protection to
+            data.
+          </p>
+        </article>
+        <article id="data-storage">
+          <h4>Data Storage</h4>
+          <p>
+            Without DBMS, storing data requires digital or physical capacity
+            resulting in scalability issues when datasets grow. Storing backups
+            exacerbates data storage issues and any risks associated with data
+            storage.
+          </p>
+        </article>
+      </section>
+      <section id="common-features-dbms">
+        <h3>Common Features of Commercial DBMS's</h3>
+        <h4>CRUD Operations</h4>
+        <p>
+          The basic operations DBMS provides are represented by the CRUD
+          acronym:
+        </p>
+        <ul>
+          <li><strong>C</strong> - Creating Data</li>
+          <li><strong>R</strong> - Retrieving Data</li>
+          <li><strong>U</strong> - Updating Data</li>
+          <li><strong>D</strong> - Deleting Data</li>
+        </ul>
+        <p>
+          These basic operations are common to DBMS's. Other features that are
+          commonly implemented in commercial DBMS's aim to solve the issues
+          outlined in the previous section.
+        </p>
+
+        <h4>Data Access Tools</h4>
+        <p>
+          Data access tools make the process of data retrieval more efficient.
+          Users of data do not require a technical background as data access
+          tools have simple user-interfaces with no tech experience required to
+          retrieve data. Users are able to query, view, and manipulate data in a
+          database to facilitate insight generation and a faster route to
+          decision-making.
+        </p>
+
+        <h4>Data Recovery</h4>
+        <p>
+          DBMS's also improve data recovery allowing users to access older
+          versions of existing data. In the event of loss or failures in the
+          data, data recovery tools make the restoration process much faster
+          allowing for continuity in operations. Without this feature, the
+          rebound time would be longer and more resources would need to be
+          allocated to the data recovery process making operations less
+          efficient.
+        </p>
+
+        <h4>Auditing Features</h4>
+        <p>
+          The ability to monitor activity within a database is the audit feature
+          implemented in commercial DBMS's. Auditing features improve data
+          security and protection as any changes made to data are recorded and
+          access to the data is tracked. The activity led allows for
+          accountability and deters malicious activity as people are aware that
+          they may be detected. In the event of a security incident, the tracked
+          activity provides a body of evidence.
+        </p>
+
+        <h4>Distributed Data Management</h4>
+        <p>
+          Distributed data management is a feature that allows data to be shared
+          between multiple users, and across multiple systems or locations. When
+          data is shared among multiple users and systems, distributed data
+          management features ensure that data is synchronised, accessible in
+          good time and available for use for multiple users and locations. This
+          feature improves the efficiency of access to data within databases
+          while maintaining data security and data integrity.
+        </p>
+
+        <h4>Backup Features</h4>
+        <p>
+          Backup features are commonly implemented in commercial DBMS's to
+          prevent data loss. Similar to data recovery features, backup features
+          allow users to restore data in the event of loss or damage. In
+          contrast to data recovery features, backup features tend to refer to
+          copies of the entire database usually stored remotely (e.g., cloud
+          storage). Backup features automate the backup process which may have
+          been tedious before DBMS. The backup feature also lowers the risk of
+          human error affecting the integrity or completeness of a backup.
+        </p>
+
+        <h4>Transaction Processing</h4>
+        <p>
+          Transaction processing features refer to the features that ensure
+          database transactions are processed reliably before data is
+          permanently created, updated, and deleted within the database. These
+          features include alerts for users about invalid or incomplete data
+          inputs preventing erroneous changes to the data within the database.
+          These features contribute to data integrity as errors/issues are
+          detected and can be corrected before they are committed. When the
+          consequences of inaccurate data are grave, this feature is salient as
+          small inaccuracies may distort findings leading to poor
+          decision-making and outcomes. In addition, transaction processing
+          features include features that prevent data redundancies as one is
+          able to update a field across multiple files or records ensuring
+          consistency within the database.
+        </p>
+      </section>
+      <section id="understanding-sparse-data">
+        <h3>Understanding Sparse Data</h3>
+        <p>
+          Sparse data refers to datasets where most fields have values of zero
+          or are empty. The meaning of sparse data is different from missing
+          data although the value of both may be zero or empty. Unlike missing
+          data, sparse data has a zero or empty value that is known, whereas
+          missing data has a null value because the value is not yet known.
+        </p>
+        <p>
+          Sparse data is commonly found in recommender systems for TV and movie
+          streaming services. Users and their recommendations can be represented
+          by a user-item matrix. The rows are the user values and the columns
+          represent the items (TV shows and movies) available on the platform.
+          Given that users view a small subset of all items available for
+          streaming and recommend a smaller subset of items, the resultant
+          matrix would likely be sparse data as most values would be null or
+          zero (i.e., the shows that the user has not recommended or watched).
+        </p>
+        <p>
+          For further reading on sparse datasets and practical examples, refer
+          to the article by Varsheni, S. 2022,
+          <a
+            href="https://www.analyticsvidhya.com/blog/2022/11/explaining-sparse-datasets-with-practical-examples/"
+            target="_blank"
+            >Explaining Sparse Datasets with Practical Examples</a
+          >
+          [Accessed 12 January 2024].
+        </p>
+      </section>
+      <section id="types-of-dbms">
+        <h3>The Different Types of DBMS's</h3>
+
+        <h4>Hierarchical</h4>
+        <p>
+          This type of DBMS uses a tree-like structure or hierarchy to model
+          data. Hierarchical DBMS stores data according to its record type such
+          that a record type is required to have a single parent record type,
+          with the root node being the exception. A record instance follows the
+          data structure/description pre-determined by its attributes and the
+          attributes it inherits from its parent. An XML document is a good
+          example of a hierarchical DBMS. Hierarchical DBMS's are best for
+          systems that have a clear hierarchical structure, such as a file
+          system or directory, as the database is traversed from the root to the
+          "leaf" i.e., from the root directory through subfolders containing
+          files. The IBM Information Management System (IMS) DB is an example of
+          a hierarchical model and it can be used to store records such as
+          customer information with fields like customer name and contact
+          information. The children of this record may be customer orders that
+          inherit the customer details to reduce redundancy.
+        </p>
+
+        <h4>Relational</h4>
+        <p>
+          This DBMS represents data as relations or tables. Each row is a record
+          and the fields/attributes are represented in columns. This DBMS type
+          is useful for representing relationships between records. Relational
+          DBMS would be used for inventory and stock management in business
+          operations as it allows for the relations between multiple record
+          types to be represented e.g., inventory levels, orders, supplier
+          information, receivables and payables can all be represented and
+          queried. MySQL is an example of a popular relational DBMS.
+        </p>
+
+        <h4>Network</h4>
+        <p>
+          A network DBMS uses a network model to organise data. Similar to the
+          hierarchical model, a record type has a parent node, however, record
+          instances can have multiple parents and child nodes, allowing for more
+          complex relationships within the database. The ability to have
+          many-to-many relationships between records makes this database model
+          more flexible than hierarchical DBMS, however, traversing the network
+          model is also more complex. Network DBMS can be used for
+          telecommunications where a single switch can connect to multiple
+          networks and a single network can be connected to many switches.
+          RaimaDB is a good example of a commercially available DBMS that uses
+          the network model. Data from multiple sensors and operating systems
+          can be stored and manipulated efficiently and reliably allowing for
+          process optimisation through real-time feedback loops from multiple
+          inputs in an Internet of Things environment.
+        </p>
+
+        <h4>Object-Oriented</h4>
+        <p>
+          Object-oriented DBMS add database functionality to object-oriented
+          programming languages such as Java. The objective of this DBMS type
+          was to ensure that the database and the program spoke the same
+          language. In this model, data is stored as objects and methods used to
+          manipulate the data are stored with it much like classes in
+          object-oriented programming languages. This DBMS also supports
+          inheritance, ultimately reducing redundancy. Object-oriented DBMS are
+          used for multimedia and content management as these database types
+          allow for diverse data e.g., sound, video, text, graphics, and graphs.
+          ObjectDB is an example of an Object-Oriented DBMS that is optimised
+          for Java.
+        </p>
+
+        <h4>Sources</h4>
+        <ul>
+          <li>
+            IBM (2024).
+            <a
+              href="https://www.ibm.com/docs/en/ims/15.4.0?topic=databases-database-concepts-terminology"
+              target="_blank"
+              >Database concepts and terminology</a
+            >.
+          </li>
+          <li>
+            ObjectDB (n.d.).
+            <a href="https://www.objectdb.com" target="_blank"
+              >ObjectDB is a powerful Object-Oriented Database Management System
+              (ODBMS)</a
+            >.
+          </li>
+          <li>
+            Oracle (2024).
+            <a href="https://www.mysql.com" target="_blank"
+              >MySQL: The world's most popular open source database</a
+            >.
+          </li>
+          <li>
+            Panwar, A. (2023).
+            <a
+              href="https://www.c-sharpcorner.com/UploadFile/65fc13/types-of-database-management-systems/"
+              target="_blank"
+              >Types of Databases</a
+            >.
+          </li>
+          <li>
+            Raima (2023).
+            <a href="https://raima.com/internet-of-things/" target="_blank"
+              >Internet of Things</a
+            >.
+          </li>
+          <li>
+            Watt, A., & Nelson, E. (2014).
+            <a
+              href="https://opentextbc.ca/dbdesign01/chapter/chapter-4-types-of-database-models/"
+              target="_blank"
+              >Chapter 4 Types of Data Models</a
+            >.
+          </li>
+        </ul>
+      </section>
+      <section id="nosql-dbms-features">
+        <h3>NoSQL Database Management Systems Features</h3>
+        <p>
+          NoSQL databases are suited for a variety of data models such as
+          documents, key-values, wide-column, and graphs. These databases allow
+          the use of semi-structured or unstructured data making them flexible
+          to changes in the data over time. NoSQL databases are widely used for
+          big data and web applications as they offer scalability and
+          performance although this is at the expense of strict compliance to
+          ACID properties.
+        </p>
+
+        <h4>Cassandra</h4>
+        <p>
+          Cassandra is a wide-column database model meaning that data is
+          organised in rows and columns although these tables are not the same
+          as relations in the relational model.
+        </p>
+        <ul>
+          <li>
+            <strong>Scalability:</strong> Cassandra structures data into
+            clusters of nodes where each node carries the same salience. Storage
+            capacity is proportional to the number of nodes therefore adding
+            more nodes increases the database system's capacity. This makes
+            Cassandra well-suited for big data and real-time web data.
+          </li>
+          <li>
+            <strong>Prevention of data loss:</strong> Because of the structure
+            of Cassandra, there is no single point of failure. Data is
+            replicated across a number of nodes meaning a single node's failure
+            does not result in data loss as replicas exist in other nodes. This
+            ensures reliability and security with little to no downtime as
+            alternate nodes can undertake the transactions of the malfunctioning
+            node while it is restored. While this feature prevents data-loss,
+            having multiple replicas of the same information affects performance
+            which is why Cassandra has known latency issues and Java Memory
+            Model issues.
+          </li>
+          <li>
+            <strong>Cassandra Query Language (CQL):</strong> The query language
+            used for Cassandra is very similar to Standard Query Language (SQL),
+            making this DBMS user-friendly as SQL skills are transferable.
+            Although there are similarities, Cassandra is not a relational
+            database therefore there is inflexibility in the operations that can
+            be performed with structured databases and SQL.
+          </li>
+        </ul>
+        <p>
+          Source:
+          <a
+            href="https://www.spiceworks.com/tech/big-data/articles/what-is-cassandra/"
+            target="_blank"
+            >What Is Cassandra? Meaning, Working, Features, and Uses by
+            BasuMallick, C. (2023)</a
+          >.
+        </p>
+
+        <h4>MongoDB</h4>
+        <p>
+          MongoDB is an open-source database with a document-oriented
+          architecture using collections and documents in lieu of relational
+          tables and rows. MongoDB uses the JSON storage format making it
+          possible to manipulate and view different data types in a single
+          document.
+        </p>
+        <ul>
+          <li>
+            <strong>Document-oriented model:</strong> MongoDB uses a
+            document-based data model. This means that complex relationships can
+            be represented without the rigidity of relational relationships that
+            have to be represented in tables like in SQL databases. Furthermore,
+            multiple types of data can exist within a document allowing
+            programmers to focus on a particular data set without the need to
+            traverse columns or rows.
+          </li>
+          <li>
+            <strong>Schema-less database:</strong> Documents are grouped into
+            collections and these documents do not have to have the same schema
+            allowing fields to be added and deleted as the data evolves. This
+            feature makes MongoDB more flexible than relational databases.
+          </li>
+          <li>
+            <strong>Indexing:</strong> The fields within a document have a
+            primary and a secondary index used to facilitate searches. This
+            indexing feature allows MongoDB to sort through data efficiently to
+            return an entry, instead of searching each document. This feature
+            makes MongoDB competitive.
+          </li>
+        </ul>
+        <p>
+          Source:
+          <a
+            href="https://www.spiceworks.com/tech/cloud/articles/what-is-mongodb/"
+            target="_blank"
+            >What Is MongoDB? Working, Architecture, Features, and Use Cases by
+            BasuMallick, C. (2022)</a
+          >.
+        </p>
+
+        <h4>Redis</h4>
+        <p>
+          Redis (REmote DIctionary Server) is a NoSQL open-source database that
+          stores data in-memory. Redis supports multiple data structures making
+          it versatile for users.
+        </p>
+        <ul>
+          <li>
+            <strong>RAM storage:</strong> Redis stores data in-memory function
+            like an application cache. This allows the database to return
+            results extremely fast independent of traffic. Data can be stored
+            remotely by pushing commands to the cloud allowing data to be
+            preserved after restarts.
+          </li>
+          <li>
+            <strong>Data Persistence:</strong> While Redis is an in-memory data
+            store, it uses persistent disk storage and regularly takes snapshots
+            of datasets in their state appending changes to the data set,
+            generating backups. These backups can be set to occur at
+            user-defined intervals and each backup is accessible allowing one to
+            restore datasets to a particular version.
+          </li>
+          <li>
+            <strong>Redis queues:</strong> Redis allows users to queue tasks
+            allowing complex tasks to be executed autonomously or in the
+            background.
+          </li>
+        </ul>
+        <p>
+          Source:
+          <a href="https://www.ibm.com/topics/redis" target="_blank"
+            >What is Redis? by IBM (n.d.)</a
+          >.
+        </p>
+      </section>
+
+      <section id="acid-properties">
+        <h3>Understanding ACID Properties of Databases</h3>
+        <p>
+          ACID properties describe how transactions are handled in DBMSs. ACID
+          is an acronym for atomicity, consistency, isolation, and durability,
+          all of which should be guaranteed for transactions on a single record.
+          A transaction is a collection of operations that are grouped as one
+          logical operation carried out on a single record or multiple records.
+          Furthermore, an ACID transaction, a transaction that has all four ACID
+          properties, ensures that a database maintains accuracy and integrity
+          even in the event of an operation's failure.
+        </p>
+
+        <h4>Key ACID Properties</h4>
+        <dl>
+          <dt>Atomicity</dt>
+          <dd>
+            This property ensures that all the operations that make up a
+            transaction are treated as a single logical operation such that a
+            failure of a single operation is a failure of all the operations in
+            the transaction. In order to succeed all operations must be
+            successful otherwise the database is rolled back to its initial
+            state before the attempted transaction.
+          </dd>
+          <dt>Consistency</dt>
+          <dd>
+            Consistency ensures that all constraints that apply to the data are
+            adhered to before, during, and after the transaction. For example,
+            numeric data may be constrained to positive values only. Should an
+            operation result in a negative value, the transaction will not be
+            successful as the constraints were not adhered to and the database
+            would not be consistent. Consistency applies to the constraints
+            applied to the data by the person who created the database and this
+            type of consistency is also called referential integrity.
+          </dd>
+          <dt>Isolation</dt>
+          <dd>
+            Isolation refers to operations that run concurrently without
+            interfering with each other. This means that operations run
+            independently, even if these transactions act upon the same record,
+            without interfering with each other.
+          </dd>
+          <dt>Durability</dt>
+          <dd>
+            This property ensures that the changes made to a database through
+            successful transactions are persistent and these changes are saved
+            to the disk even in the event of a power outage or system failure.
+            Durability does not include damage to the disk however backups can
+            be used to protect against data loss.
+          </dd>
+        </dl>
+
+        <h4>Sources</h4>
+        <ul>
+          <li>
+            MongoDB.
+            <a
+              href="https://www.mongodb.com/resources/basics/databases/acid-transactions"
+              target="_blank"
+              >What are ACID properties in database management systems?</a
+            >
+          </li>
+          <li>
+            GeeksforGeeks.
+            <a
+              href="https://www.geeksforgeeks.org/acid-properties-in-dbms/"
+              target="_blank"
+              >ACID properties in DBMS (2023)</a
+            >.
+          </li>
+          <li>
+            freeCodeCamp.
+            <a
+              href="https://www.freecodecamp.org/news/acid-databases-explained/"
+              target="_blank"
+              >Acid databases- atomicity, consistency, isolation & durability
+              explained (2024)</a
+            >.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <footer>
+      <!-- Footer -->
+    </footer>
+  </body>
+</html>
